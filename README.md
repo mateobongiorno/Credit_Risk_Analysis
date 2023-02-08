@@ -43,6 +43,8 @@ Next, go to the browser and search for "localhost".
 
 Fill out the form displayed on the interface and submit it to get results on your input.
 
+- ![form](api/static/images/formweb.jpg)
+
 In the --form--, you must complete each field to make predictions of the prediction and probability associated. It will return "approved" if the prediction is "0" and the probability is less than "0.27", and "not approved" if the prediction is "1" and the probability is equal to or greater than "0.27".
 
 -------------------------------------------------------------------------------------------------------
