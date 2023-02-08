@@ -1,4 +1,4 @@
-### Credit Risk analysis using Deep Learning by Mateo Bongiorno. 
+### Credit Risk Analysis by Mateo Bongiorno. 
 
 This is an API service that is backed by a machine learning model that will accept a financial profile and will be able to predict a credit risk score for that profile, with the goal of predicting whether a person can apply for a loan or not, based on data provided through the form. The target value considered is "1", the person cannot pay off the loan.
 
