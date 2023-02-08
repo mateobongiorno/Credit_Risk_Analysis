@@ -43,7 +43,9 @@ Next, go to the browser and search for "localhost".
 
 Fill out the form displayed on the interface and submit it to get results on your input.
 
-- ![form](api/static/images/formweb.jpg)
+<div align="center"><br>
+    <img src="api/static/images/formweb.jpg" width=500 height=360/>
+</div><br>
 
 In the --form--, you must complete each field to make predictions of the prediction and probability associated. It will return "approved" if the prediction is "0" and the probability is less than "0.27", and "not approved" if the prediction is "1" and the probability is equal to or greater than "0.27".
 
@@ -62,8 +64,9 @@ Previous experiments were implemented with this model:
 The model selected for implementation in the API to make predictions was the `XGBoost Classifier` with default parameters, taking into account the values obtained in precision, recall, and the roc-AUC score of 0.638369229.
 These are the metrics obtained for train and test:
 
-- ![xgb_metrics](api/static/images/xgb_metrics.jpg)
-
+<div align="center"><br>
+    <img src="api/static/images/xgb_metrics.jpg"/>
+</div><br>
 
 Soruces and References:
 
