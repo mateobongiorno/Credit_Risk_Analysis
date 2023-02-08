@@ -1,0 +1,353 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+	<title>Anyone AI - Form</title>
+	<meta charset="utf-8" />
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/ico" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/main.css') }}" />
+</head>
+         
+  <!-- Header -->
+		<header id="header">
+			<div style = "position:relative; left:40px; top:11px">
+				<span class="image"><img src="{{ url_for('static', filename='images/logo.png') }}" alt="logo_anyoneai" /></span>
+			</div>
+			<nav id="nav">
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li>
+						<a href="#">About us</a>
+						<ul>
+							<li><a href="how_we_did.html">How we did it</a></li>
+								<li><a href="backend.html">The backend</a></li>
+								<li>
+									<a href="team.html">The team</a>
+									<ul>
+										<li><a href="team.html #mateo">Mateo</a></li>
+										<li><a href="team.html #maru">Maru</a></li>
+										<li><a href="team.html #franco">Franco</a></li>
+									</ul>
+							</li>
+						</ul>
+					</li>
+					<li><a href="contact.html">Contact</a></li>
+					<li><a href="../templates/form.html" class="button primary">Form</a></li>
+				</ul>
+			</nav>
+		</header>
+        <body>              
+              <div class="container">
+                  <div>
+                      <p>
+                          {% with messages = get_flashed_messages() %}
+                          {% if messages %}
+                              <ul>
+                              {% for message in messages %}
+                              <li>{{ message }}</li>
+                              {% endfor %}
+                              </ul>
+                          {% endif %}
+                          {% endwith %}
+                      </p>
+                  </div>
+                            
+                  <div>
+                      <form action="/" method="post" enctype="multipart/form-data">
+                          
+                          <br><br>   
+                          <h3>Fill the form</h3> 
+
+                          <label>First Name</label>
+                          <input type="text"><br><br>
+
+                          <label>Last Name</label>
+                          <input type="text"><br><br>
+                                      
+                          <label for="age">Age</label>
+                          <div class="number-input">
+                              <button type="button" onclick="this.parentNode.querySelector('input[type=number]').stepDown()" ></button>
+                              <input type="number" name="AGE" min="17" value="17">
+                              <button type="button" onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+                          </div> 
+                          <br><br>
+                          
+                          <label for="gend">Gender</label>
+                          <select name="GENDER" id="gend">
+                              <option value="M">Male</option>
+                              <option value="F">Female</option>
+                              <option value="N">Prefer not to say</option>           
+                          </select><br><br>
+
+                          <label for="nac">Nacionality</label>
+                          <select name="NACIONALITY" id="nac">
+                              <option value=1>Brazilian</option>
+                              <option value=2>Foreign</option>
+                          </select><br><br>
+
+                          <label for="pay_day">Payment Day</label>
+                              <select name="PAYMENT_DAY" id="pay_day">
+                              <option value=1>1</option>
+                              <option value=5>5</option>
+                              <option value=10>10</option>
+                              <option value=15>15</option>
+                              <option value=20>20</option>
+                              <option value=25>25</option>
+                          </select><br><br>
+                          
+                          <label for="apl">Application Submission Type</label>
+                          <select name="APPLICATION_SUBMISSION_TYPE" id="apl">
+                              <option value="Web">Web</option>
+                              <option value="Carga">Carga</option>
+                          </select><br><br>
+                          
+                          <label for="m_s">Marital Status</label>
+                          <select name="MARITAL_STATUS" id="m_s">
+                              <option value=1>Single</option>
+                              <option value=2>Married</option>
+                              <option value=3>Divorced</option>
+                              <option value=4>Widowed</option>
+                              <option value=5>Separated</option>
+                              <option value=6>Unmarried</option>
+                              <option value=7>Partner</option>
+                          </select><br><br>
+                          
+                          <label for="q_d">Quant Dependants</label>
+                          <div class="number-input">
+                              <button type="button" onclick="this.parentNode.querySelector('input[type=number]').stepDown()" ></button>
+                              <input type="number" name="QUANT_DEPENDANTS" id="q_d" min="0" value="0"><br><br>
+                              <button type="button" onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+                          </div> 
+                          <br><br>
+
+                          <label for="re_ty">Residence Type</label>
+                          <div class="number-input">
+                              <button type="button" onclick="this.parentNode.querySelector('input[type=number]').stepDown()" ></button>
+                              <input type="number" name="RESIDENCE_TYPE" id=re_ty min="0" max="5" value="1"> <br><br>
+                              <button type="button" onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+                          </div> 
+                          <br><br>
+                          
+                          <label for="m_i_r">Months In Residence</label>
+                          <div class="number-input">
+                              <button type="button" onclick="this.parentNode.querySelector('input[type=number]').stepDown()" ></button>
+                              <input type="number" name="MONTHS_IN_RESIDENCE" id=m_i_r min=0  value="0"><br><br>
+                              <button type="button" onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+                          </div> 
+                          <br><br>
+
+                          <label for="fl_em">Email</label>
+                          <select name="FLAG_EMAIL" id="fl_em">
+                              <option value=0>No</option>
+                              <option value=1>Yes</option>
+                          </select><br><br>
+              
+                          <label for="fl_visa">VISA Credit Card</label>
+                          <select name="FLAG_VISA" id="fl_visa">
+                              <option value=0>No</option>
+                              <option value=1>Yes</option>
+                          </select><br><br>
+              
+                          <label for="fl_mas">MASTERCARD Credit Card</label>
+                          <select name="FLAG_MASTERCARD" id="fl_mas">
+                              <option value=0>No</option>
+                              <option value=1>Yes</option>
+                          </select><br><br>
+              
+                          <label for="fl_din">DINERS Credit Card</label>
+                          <select name="FLAG_DINERS" id="fl_din">
+                              <option value=0>No</option>
+                              <option value=1>Yes</option>
+                          </select><br><br>
+              
+                          <label for="fl_amex">AMERICAN EXPRESS Credit Card</label>
+                          <select name="FLAG_AMERICAN_EXPRESS" id="fl_amex">
+                              <option value=0>No</option>
+                              <option value=1>Yes</option>
+                          </select><br><br>
+              
+                          <label for="fl_oth">Other Credit Card</label>
+                          <select name="FLAG_OTHER_CARDS" id="fl_oth">
+                              <option value=0>No</option>
+                              <option value=1>Yes</option>
+                          </select><br><br>
+              
+                          <label for="q_banka">Quant Banking Accounts</label>
+                          <div class="number-input">
+                              <button type="button" onclick="this.parentNode.querySelector('input[type=number]').stepDown()" ></button>
+                              <input type="number" name="QUANT_BANKING_ACCOUNTS" id="q_banka" min="0" max="2" value="0"><br><br>
+                              <button type="button" onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+                          </div> 
+                          <br><br>
+                          
+                          <label for="q_spec_banka">Quant Special Banking Accounts</label>
+                          <div class="number-input">
+                              <button type="button" onclick="this.parentNode.querySelector('input[type=number]').stepDown()" ></button>
+                              <input type="number" name="QUANT_SPECIAL_BANKING_ACCOUNTS" id="q_spec_banka" min="0" max="2" value="0"><br><br>
+                              <button type="button" onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+                          </div> 
+                          <br><br>
+
+                          <label for="qu_ca">Car Possess</label>
+                          <select name="QUANT_CARS" id="qu_ca">
+                              <option value=0>No</option>
+                              <option value=1>Yes</option>
+                          </select><br><br>
+
+                          <label for="pr_cd">Profession Code</label>
+                          <div class="number-input">
+                              <button type="button" onclick="this.parentNode.querySelector('input[type=number]').stepDown()"></button>
+                              <input type="number" name="PROFESSION_CODE" id="pr_cd" min="0" max="17" value="0"><br><br>
+                              <button type="button" onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+                          </div> 
+                          <br><br>
+                          
+                          <label for="oc_ty">Occupation Type</label>
+                          <div class="number-input">
+                              <button type="button" onclick="this.parentNode.querySelector('input[type=number]').stepDown()"></button>
+                              <input type="number" name="OCCUPATION_TYPE" id="oc_ty" min="0" max="5" value="0"><br><br>
+                              <button type="button" onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+                          </div> 
+                          <br><br>
+
+                          <label for="product">Product</label>
+                          <select name="PRODUCT" id="product">
+                              <option value=1>1</option>
+                              <option value=2>2</option>
+                              <option value=7>7</option>
+                          </select><br><br>                     
+          
+                          <label for="incomes">Total Incomes</label>
+                          <div class="number-input">
+                              <button type="button" onclick="this.parentNode.querySelector('input[type=number]').stepDown()"></button>
+                              <input type="number" name="TOTAL_INCOMES" id="incomes" min="0" value="0"/><br><br>
+                              <button type="button" onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+                          </div>
+                          <br><br>
+
+                          <label for="s_o_b">State Of Birth</label>
+                          <select name="STATE_OF_BIRTH" id="s_o_b">
+                              <option value="AC">AC</option>
+                              <option value="AL">AL</option>
+                              <option value="AM">AM</option>
+                              <option value="AP">AP</option>
+                              <option value="BA">BA</option>
+                              <option value="CE">CE</option>
+                              <option value="DF">DF</option>
+                              <option value="ES">ES</option>
+                              <option value="GO">GO</option>
+                              <option value="MA">MA</option>
+                              <option value="MG">MG</option>
+                              <option value="MS">MS</option>
+                              <option value="MT">MT</option>
+                              <option value="PA">PA</option>
+                              <option value="PB">PB</option>
+                              <option value="PE">PE</option>
+                              <option value="PI">PI</option>
+                              <option value="PR">PR</option>
+                              <option value="RJ">RJ</option>
+                              <option value="RN">RN</option>
+                              <option value="RO">RO</option>
+                              <option value="RR">RR</option>
+                              <option value="RS">RS</option>
+                              <option value="SC">SC</option>
+                              <option value="SE">SE</option>
+                              <option value="SP">SP</option>
+                              <option value="TO">TO</option>
+                          </select><br><br>
+                          
+                          <label for="r_s">Residencial State</label>
+                          <select name="RESIDENCIAL_STATE" id="r_s">
+                              <option value="AC">AC</option>
+                              <option value="AL">AL</option>
+                              <option value="AM">AM</option>
+                              <option value="AP">AP</option>
+                              <option value="BA">BA</option>
+                              <option value="CE">CE</option>
+                              <option value="DF">DF</option>
+                              <option value="ES">ES</option>
+                              <option value="GO">GO</option>
+                              <option value="MA">MA</option>
+                              <option value="MG">MG</option>
+                              <option value="MS">MS</option>
+                              <option value="MT">MT</option>
+                              <option value="PA">PA</option>
+                              <option value="PB">PB</option>
+                              <option value="PE">PE</option>
+                              <option value="PI">PI</option>
+                              <option value="PR">PR</option>
+                              <option value="RJ">RJ</option>
+                              <option value="RN">RN</option>
+                              <option value="RO">RO</option>
+                              <option value="RR">RR</option>
+                              <option value="RS">RS</option>
+                              <option value="SC">SC</option>
+                              <option value="SE">SE</option>
+                              <option value="SP">SP</option>
+                              <option value="TO">TO</option>
+                          </select><br><br>
+                      
+                          <label for="f_rs_p">Residencial Phone</label>
+                          <select name="FLAG_RESIDENCIAL_PHONE" id="f_rs_p">
+                              <option value="N">No</option>
+                              <option value="Y">Yes</option>
+                          </select><br><br>                         
+              
+                          <label for="fl_pr_ph">Professional Phone</label>
+                          <select name="FLAG_PROFESSIONAL_PHONE" id="fl_pr_ph">
+                              <option value="N">No</option>
+                              <option value="Y">Yes</option>
+                          </select><br><br>
+
+                          <label for="prof_p_are">Professional Phone Area Code</label>
+                          <div class="number-input">
+                              <button type="button" onclick="this.parentNode.querySelector('input[type=number]').stepDown()"></button>
+                              <input type="number" name="PROFESSIONAL_PHONE_AREA_CODE" id="prof_p_are" min="1" max="999" value="221"><br><br>
+                              <button type="button" onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+                          </div> 
+                          <br><br>
+                          
+                          <label for="res_zip">Residencial Zip (3 digits)</label>
+                          <div class="number-input">
+                              <button type="button" onclick="this.parentNode.querySelector('input[type=number]').stepDown()"></button>
+                              <input type="number" name="RESIDENCIAL_ZIP_3" id="res_zip" min="105" max="999" value="190"><br><br>
+                              <button type="button" onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+                          </div> 
+                          <br><br>
+
+                          <label for="prof_zip">Professional Zip (3 digits)</label>
+                          <div class="number-input">
+                              <button type="button" onclick="this.parentNode.querySelector('input[type=number]').stepDown()"></button>
+                              <input type="number" name="PROFESSIONAL_ZIP_3" id="prof_zip" min="105" max="999" value="190"><br><br>
+                              <button type="button" onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+                          </div> 
+                          <br><br>
+                        
+                          <label for="comp">Company</label>
+                          <select name="COMPANY" id="comp">
+                              <option value="N">No</option>
+                              <option value="Y">Yes</option>
+                          </select><br><br>
+
+                          <button class="button primary">Submit</button>
+
+                        </form>                        
+                  </div> 
+              </div>
+              <br>
+
+        <!-- Footer -->
+			<footer id="footer">
+				<ul class="icons">
+					<li><a href="https://www.linkedin.com/in/mateobongiorno/" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+					<li><a href="https://www.instagram.com/mmbongiorno/" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+					<li><a href="https://github.com/mateobongiorno" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+					<!-- <li><a href="mailto:mateobongiorno01@gmail.com?subject=Mail from the Website" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li> -->
+				</ul>
+				<ul class="copyright">
+					<li>&copy; Credit Risk 2022 Anyone AI Inc.</li><li><a href="https://anyoneai.com/en/for-companies">Visit our page.</a></li>
+				</ul>
+			</footer>		        
+	    </body>
+</html>

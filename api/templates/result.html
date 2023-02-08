@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+    <title>Anyone AI - Result</title>
+	<meta charset="utf-8" />
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/ico" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/main.css') }}" />
+</head>
+
+    <!-- Header -->
+        <header id="header">
+            <div style = "position:relative; left:40px; top:11px">
+                <span class="image"><img src="{{ url_for('static', filename='images/logo.png') }}" alt="logo_anyoneai" /></span>
+            </div>
+            <nav id="nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li>
+                        <a href="#">About us</a>
+                        <ul>
+                            <li><a href="how_we_did.html">How we did it</a></li>
+                                <li><a href="backend.html">The backend</a></li>
+                                <li>
+                                    <a href="#">The team</a>
+                                    <ul>
+                                        <li><a href="team.html #mateo">Mateo</a></li>
+                                        <li><a href="team.html #maru">Maru</a></li>
+                                        <li><a href="team.html #franco">Franco</a></li>
+                                    </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="form.html" class="button primary">Form</a></li>
+                </ul>
+            </nav>
+        </header>
+            <body>
+                <div class="center" style = "position:relative; right:10%">
+                    <br><br>
+                    <br><br>
+                        
+                        {% if context['prediction'] == 1 %}
+                            <img src="{{ url_for('static', filename ='images/not_approved.jpg') }}"  alt="Not approved">
+
+                        {% elif context['prediction'] == 0 %}
+                            <img src="{{ url_for('static', filename ='images/approved.jpg') }}" alt="Approved">
+                        
+                        {% endif %}
+                        
+                        <br><br>
+                        <h1>Score: {{ context['probability'] }}</h1> 
+
+                    <br><br>
+                </div>
+
+            <!-- Footer -->
+			<footer id="footer">
+				<ul class="icons">
+					<li><a href="https://www.linkedin.com/in/mateobongiorno/" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+					<li><a href="https://www.instagram.com/mmbongiorno/" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+					<li><a href="https://github.com/mateobongiorno" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+					<!-- <li><a href="mailto:mateobongiorno01@gmail.com?subject=Mail from the Website" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li> -->
+				</ul>
+				<ul class="copyright">
+					<li>&copy; Credit Risk 2022 Anyone AI Inc.</li><li><a href="https://anyoneai.com/en/for-companies">Visit our page.</a></li>
+				</ul>
+			</footer>
+            </body>
+</html>

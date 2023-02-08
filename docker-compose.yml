@@ -1,0 +1,31 @@
+version: "2.10"
+services:
+  api:
+    image: credit_risk_api_image
+    container_name: credit_risk_api
+    build:
+      context: ./api
+      target: build
+    ports:
+      - "80:5000"
+    environment:
+      - FLASK_APP=app
+      - FLASK_DEBUG=1
+      - FLASK_ENV=development
+    depends_on:
+      - redis
+      - model
+    volumes:
+      - ./uploads:/src/static/uploads
+ 
+  redis:
+    image: redis:6.2.6
+
+  model:
+    image: credit_risk_model_image
+    container_name: credit_risk_model
+    build:
+      context: ./model
+      target: build
+    depends_on:
+      - redis
