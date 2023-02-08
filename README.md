@@ -84,7 +84,7 @@ Soruces and References:
 
 --------------------------------------------------------------------------------------------------------
 
-By this, we have come to the end of this long project.
+By this, we have come to the end of this project.
 
 Thanks for trying to understand it, I hope you like it,
 Mateo.
