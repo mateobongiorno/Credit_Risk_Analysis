@@ -26,7 +26,7 @@ Its composed by three microservices, that are configured to be excecuted with a 
 
 ------------------------------------------------------------------------------------------------------
 
-## Run the services.
+## Run the services in localhost.
 To run the services enter the next command in your bash console:
 
 ```bash
